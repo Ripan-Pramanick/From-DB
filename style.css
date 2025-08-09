@@ -1,0 +1,28 @@
+ /* Shimmer animation for skeleton loaders */
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        /* The skeleton placeholder base style */
+        .skeleton-box {
+            position: relative;
+            overflow: hidden;
+            background-color: #e2e8f0; /* gray-200 */
+        }
+
+        /* The shimmer effect element */
+        .skeleton-box::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: shimmer 1.5s infinite;
+        }
