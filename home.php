@@ -41,6 +41,7 @@ if ($total != 0) {
                     <!-- Table Header -->
                     <thead class="bg-gray-100 text-xs text-gray-700 uppercase">
                         <tr>
+                            <th scope="col" class="px-6 py-4">Id</th>
                             <th scope="col" class="px-6 py-4">Name</th>
                             <th scope="col" class="px-6 py-4">Age</th>
                             <th scope="col" class="px-6 py-4">Gender</th>
@@ -52,8 +53,11 @@ if ($total != 0) {
                     </thead>
                     <tbody>
                     <?php while ($data = mysqli_fetch_array($result)): ?>
+                        
                         <tr class="bg-white border-b border-gray-200 hover:bg-gray-50 transition duration-150 ease-in-out">
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"><?php echo htmlspecialchars($data['fname']." ".$data['lname']); ?></td>
+                            <td class="px-6 py-4 font-bold"><?php echo htmlspecialchars($data['id']); ?></td>
+                        
+                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"><?php echo htmlspecialchars($data['fname']." ".$data['lname']); ?></td>
                             <td class="px-6 py-4"><?php echo htmlspecialchars($data['age']); ?></td>
                             <td class="px-6 py-4 capitalize"><?php echo htmlspecialchars($data['gender']); ?></td>
                             <td class="px-6 py-4"><?php echo htmlspecialchars($data['email']); ?></td>
